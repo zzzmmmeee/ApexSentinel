@@ -1,6 +1,4 @@
 # coding=utf-8
-import sys
-sys.path.append('/home/wucanyang')
 import os
 os.environ["HF_ENDPOINT"] = "https://hf-mirror.com"
 os.environ['PYTORCH_CUDA_ALLOC_CONF'] = 'expandable_segments:True'
