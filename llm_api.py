@@ -1,6 +1,4 @@
 # coding=utf-8
-import sys
-sys.path.append('/home/wucanyang')
 import os
 from openai import OpenAI
 
