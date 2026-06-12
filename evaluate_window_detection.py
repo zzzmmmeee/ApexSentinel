@@ -166,16 +166,33 @@ def write_tp_and_fp(alert_file_path, ground_truth_file_path, G, i, all_malicious
             output_path="./result/tp_detail.txt", 
             count_path="./result/tp_detail_count.txt")
     
+
+def merge_txt_files(file1, file2, output_file):
+    with open(file1, 'r', encoding='utf-8') as f1, \
+         open(file2, 'r', encoding='utf-8') as f2, \
+         open(output_file, 'w', encoding='utf-8') as out:
+        
+        for line in f1:
+            stripped = line.strip()
+            if stripped:
+                out.write(stripped + '\n')
+        
+        for line in f2:
+            stripped = line.strip()
+            if stripped:
+                out.write(stripped + '\n')
     
 
 if __name__ == "__main__":
     import argparse
     
     parser = argparse.ArgumentParser()
-    parser.add_argument('--alert_file_path', type=str, default='./result/predict.txt')  
+    parser.add_argument('--alert_path', type=str, default='./result')  
     args = parser.parse_args()
-    
-    alert_file_path = args.alert_file_path
+
+    alert_file_path = args.alert_path + "/predict.txt"
+    merge_txt_files(args.alert_path + "/fp_detail.txt", args.alert_path + "/tp_detail.txt", alert_file_path)
+
     if config.theia == 1:
         ground_truth_file_path = "./dataset/theia.txt"
         with open(f"./graph_theia/graph.pkl", "rb") as f:
