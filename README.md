@@ -1,4 +1,4 @@
-# ApexSentinel
+# ApexSentinel: Detecting and Explaining Advanced Persistent Threats with Large Language Models
 
 ## Environment Settings
 ```bash
