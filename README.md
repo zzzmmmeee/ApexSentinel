@@ -11,7 +11,7 @@ We have provided the pruned log data in `./dataset`. You can also download the D
 
 ## Run
 ### Cadets dataset
-For cadets dataset, in config.py set:
+For cadets dataset, in `config.py` set:
 ```python
 theia = 0 
 ```
@@ -21,7 +21,7 @@ python testLLM.py --multi_dir ./dataset/split_cadets
 ```
 
 ### Theia dataset
-For theia dataset, in config.py set:
+For theia dataset, in `config.py` set:
 ```python
 theia = 1 
 ```
